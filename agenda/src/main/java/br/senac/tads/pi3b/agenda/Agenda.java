@@ -44,12 +44,12 @@ public class Agenda {
         }
     }
     
-    public void incluir() throws ClassNotFoundException, SQLException {
+    public void incluir(Pessoa p, String email, String Tel) throws ClassNotFoundException, SQLException {
         
         try (Connection conn = obterConexao();
                 PreparedStatement stmt = conn.prepareStatement(
                         "INSERT INTO PESSOA (nome, dtnascimento) VALUES (?,?)")) {
-            stmt.setString(1, "MARIA DE SOUZA");
+            stmt.setString(1, p.getNome());
             GregorianCalendar cal = new GregorianCalendar(1992, 10, 5); // 5 de novembro de 1992  
             stmt.setDate(2, new java.sql.Date(cal.getTimeInMillis()));
             
@@ -62,7 +62,7 @@ public class Agenda {
         Agenda agenda = new Agenda();
 
         try {
-            agenda.incluir();
+            //agenda.incluir();
             agenda.listar();
         } catch (ClassNotFoundException ex) {
             System.err.println(ex.getMessage());
