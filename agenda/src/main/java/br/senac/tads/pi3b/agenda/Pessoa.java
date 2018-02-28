@@ -5,19 +5,47 @@
  */
 package br.senac.tads.pi3b.agenda;
 
+import java.util.Date;
+
 /**
  *
  * @author victor.gsgalvao
  */
 public class Pessoa {
     
-    long id;
+    private long id;
     
-    String nome;
+    private String nome;
     
-    Date dtnascimento;
+    private Date dtnascimento;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Date getDtnascimento() {
+        return dtnascimento;
+    }
+
+    public void setDtnascimento(Date dtnascimento) {
+        this.dtnascimento = dtnascimento;
+    }
+
+
     
-    
-    
+
+  
     
 }
